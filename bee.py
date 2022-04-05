@@ -1,11 +1,8 @@
-bee_script = open("bee_script.txt", "rt")
-shrek_script = open("shrek_script.txt", "r")
-shrek = shrek_script.read()
-holy_grail = open("holy_grail.txt", "wt")
+with open('bee_script.txt', 'rt') as f:
+    bee_script = f.read()
 
-for line in bee_script:
-    holy_grail.write(line.replace('bee', shrek))
+with open('shrek_script.txt', 'r') as f:
+    shrek_script = f.read()
 
-bee_script.close()
-shrek_script.close()
-holy_grail.close()
+with open('holy_grail.txt', 'w') as f:
+    f.write(bee_script.replace('bee', shrek_script))
